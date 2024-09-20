@@ -1,0 +1,17 @@
+name: 'yaskin-backend'
+
+services:
+  database:
+    container_name: pg_db
+    image: postgres:16.4
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - pg_volume:/var/lib/postgresql/data
+
+volumes:
+  p
