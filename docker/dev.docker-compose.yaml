@@ -2,7 +2,7 @@ name: 'yaskin-backend'
 
 services:
   database:
-    container_name: pg_db
+    container_name: yaskin_backend_pg_db
     image: postgres:16.4
     environment:
       POSTGRES_DB: ${DB_DATABASE}
@@ -14,4 +14,4 @@ services:
       - pg_volume:/var/lib/postgresql/data
 
 volumes:
-  p
+  pg_volume:
